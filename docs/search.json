@@ -39,6 +39,13 @@
     "href": "conflict.html#hello-world-7",
     "title": "Kybernetica.AI",
     "section": "Hello world",
-    "text": "Hello world\n\nthis"
+    "text": "Hello world\n\ngods = [\n  \"Chaos/Gaia/Mountains\",\n  \"Chaos/Gaia/Pontus\",\n  \"Chaos/Gaia/Uranus\",\n  \"Chaos/Eros\",\n  \"Chaos/Erebus\",\n  \"Chaos/Tartarus\"\n]\n\nPlot.plot({\n  axis: null,\n  height: 100,\n  margin: 10,\n  marginLeft: 40,\n  marginRight: 120,\n  marks: [\n    Plot.tree(gods, {textStroke: \"black\"})\n  ]\n})"
+  },
+  {
+    "objectID": "conflict.html#sadfadsf",
+    "href": "conflict.html#sadfadsf",
+    "title": "Kybernetica.AI",
+    "section": "sadfadsf",
+    "text": "sadfadsf\n\nd3 = require(\"d3@7\")\n\nPlot.plot((() =&gt; {\n  const n = 3; // number of facet columns\n  const keys = Array.from(d3.union(industries.map((d) =&gt; d.industry)));\n  const index = new Map(keys.map((key, i) =&gt; [key, i]));\n  const fx = (key) =&gt; index.get(key) % n;\n  const fy = (key) =&gt; Math.floor(index.get(key) / n);\n  return {\n    height: 600\n    , axis: null\n    , color: 'white'\n    , y: {insetTop: 10},\n    fx: {padding: 0.03},\n    marks: [\n      Plot.areaY(industries, Plot.normalizeY(\"extent\", {\n        x: \"date\",\n        y: \"unemployed\",\n        fx: (d) =&gt; fx(d.industry),\n        fy: (d) =&gt; fy(d.industry)\n        , fill: 'white'\n      })),\n      Plot.text(keys, {fx, fy, frameAnchor: \"top-left\", dx: 6, dy: 6}),\n      Plot.frame()\n    ]\n  };\n})())"
   }
 ]

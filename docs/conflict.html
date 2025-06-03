@@ -241,45 +241,26 @@ AI
 <img data-src="./img/ico.decisiondraft.png" class="r-stretch quarto-figure-center"><p class="caption">this</p></section>
 <section id="hello-world-7" class="slide level2">
 <h2>Hello world</h2>
-
-<img data-src="./img/ico.decisiondraft.png" class="r-stretch quarto-figure-center"><p class="caption">this</p></section></section>
-<section id="penguins" class="title-slide slide level1 center">
-<h1>Penguins</h1>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="43" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 42;"><span id="cb1-43"><a></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb1-44"><a></a></span>
-<span id="cb1-45"><a></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb1-46"><a></a>  [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> </span>
-<span id="cb1-47"><a></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Bill length (min):"</span>}</span>
-<span id="cb1-48"><a></a>)</span>
-<span id="cb1-49"><a></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
-<span id="cb1-50"><a></a>  [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span><span class="op">,</span> <span class="st">"Dream"</span>]<span class="op">,</span> </span>
-<span id="cb1-51"><a></a>  { <span class="dt">value</span><span class="op">:</span> [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span>]<span class="op">,</span> </span>
-<span id="cb1-52"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Islands:"</span></span>
-<span id="cb1-53"><a></a>  }</span>
-<span id="cb1-54"><a></a>)</span>
-<span id="cb1-55"><a></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb1-56"><a></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
-<span id="cb1-57"><a></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
-<span id="cb1-58"><a></a>})</span>
-<span id="cb1-59"><a></a></span>
-<span id="cb1-60"><a></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span> </span>
-<span id="cb1-61"><a></a>  Plot<span class="op">.</span><span class="fu">binX</span>(</span>
-<span id="cb1-62"><a></a>    {<span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span>}<span class="op">,</span> </span>
-<span id="cb1-63"><a></a>    {<span class="dt">x</span><span class="op">:</span> <span class="st">"body_mass_g"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"species"</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
-<span id="cb1-64"><a></a>  ))</span>
-<span id="cb1-65"><a></a>  <span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb1-66"><a></a>    <span class="dt">facet</span><span class="op">:</span> {</span>
-<span id="cb1-67"><a></a>      <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
-<span id="cb1-68"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"sex"</span><span class="op">,</span></span>
-<span id="cb1-69"><a></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"species"</span><span class="op">,</span></span>
-<span id="cb1-70"><a></a>      <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">60</span></span>
-<span id="cb1-71"><a></a>    }<span class="op">,</span></span>
-<span id="cb1-72"><a></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb1-73"><a></a>      Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
-<span id="cb1-74"><a></a>    ]</span>
-<span id="cb1-75"><a></a>  }</span>
-<span id="cb1-76"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="39" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb1-39"><a></a>gods <span class="op">=</span> [</span>
+<span id="cb1-40"><a></a>  <span class="st">"Chaos/Gaia/Mountains"</span><span class="op">,</span></span>
+<span id="cb1-41"><a></a>  <span class="st">"Chaos/Gaia/Pontus"</span><span class="op">,</span></span>
+<span id="cb1-42"><a></a>  <span class="st">"Chaos/Gaia/Uranus"</span><span class="op">,</span></span>
+<span id="cb1-43"><a></a>  <span class="st">"Chaos/Eros"</span><span class="op">,</span></span>
+<span id="cb1-44"><a></a>  <span class="st">"Chaos/Erebus"</span><span class="op">,</span></span>
+<span id="cb1-45"><a></a>  <span class="st">"Chaos/Tartarus"</span></span>
+<span id="cb1-46"><a></a>]</span>
+<span id="cb1-47"><a></a></span>
+<span id="cb1-48"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-49"><a></a>  <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb1-50"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span></span>
+<span id="cb1-51"><a></a>  <span class="dt">margin</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
+<span id="cb1-52"><a></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb1-53"><a></a>  <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
+<span id="cb1-54"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-55"><a></a>    Plot<span class="op">.</span><span class="fu">tree</span>(gods<span class="op">,</span> {<span class="dt">textStroke</span><span class="op">:</span> <span class="st">"black"</span>})</span>
+<span id="cb1-56"><a></a>  ]</span>
+<span id="cb1-57"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -289,36 +270,136 @@ AI
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
+<div id="ojs-cell-1-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="penguins" class="title-slide slide level1 center">
+<h1>Penguins</h1>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="65" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb2-65"><a></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb2-66"><a></a></span>
+<span id="cb2-67"><a></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-68"><a></a>  [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> </span>
+<span id="cb2-69"><a></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Bill length (min):"</span>}</span>
+<span id="cb2-70"><a></a>)</span>
+<span id="cb2-71"><a></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
+<span id="cb2-72"><a></a>  [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span><span class="op">,</span> <span class="st">"Dream"</span>]<span class="op">,</span> </span>
+<span id="cb2-73"><a></a>  { <span class="dt">value</span><span class="op">:</span> [<span class="st">"Torgersen"</span><span class="op">,</span> <span class="st">"Biscoe"</span>]<span class="op">,</span> </span>
+<span id="cb2-74"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Islands:"</span></span>
+<span id="cb2-75"><a></a>  }</span>
+<span id="cb2-76"><a></a>)</span>
+<span id="cb2-77"><a></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb2-78"><a></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb2-79"><a></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
+<span id="cb2-80"><a></a>})</span>
+<span id="cb2-81"><a></a></span>
+<span id="cb2-82"><a></a>Plot<span class="op">.</span><span class="fu">rectY</span>(filtered<span class="op">,</span> </span>
+<span id="cb2-83"><a></a>  Plot<span class="op">.</span><span class="fu">binX</span>(</span>
+<span id="cb2-84"><a></a>    {<span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span>}<span class="op">,</span> </span>
+<span id="cb2-85"><a></a>    {<span class="dt">x</span><span class="op">:</span> <span class="st">"body_mass_g"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"species"</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> <span class="dv">20</span>}</span>
+<span id="cb2-86"><a></a>  ))</span>
+<span id="cb2-87"><a></a>  <span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-88"><a></a>    <span class="dt">facet</span><span class="op">:</span> {</span>
+<span id="cb2-89"><a></a>      <span class="dt">data</span><span class="op">:</span> filtered<span class="op">,</span></span>
+<span id="cb2-90"><a></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"sex"</span><span class="op">,</span></span>
+<span id="cb2-91"><a></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"species"</span><span class="op">,</span></span>
+<span id="cb2-92"><a></a>      <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">60</span></span>
+<span id="cb2-93"><a></a>    }<span class="op">,</span></span>
+<span id="cb2-94"><a></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-95"><a></a>      Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
+<span id="cb2-96"><a></a>    ]</span>
+<span id="cb2-97"><a></a>  }</span>
+<span id="cb2-98"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
+<div id="ojs-cell-2-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-4" data-nodetype="declaration">
+<div id="ojs-cell-2-3" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-5" data-nodetype="expression">
+<div id="ojs-cell-2-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="expression">
 
 </div>
 </div>
 </div>
 </div>
-
-
 </section>
+<section id="sadfadsf" class="slide level2">
+<h2>sadfadsf</h2>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="108" data-source-offset="-1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 107;"><span id="cb3-108"><a></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">"d3@7"</span>)</span>
+<span id="cb3-109"><a></a></span>
+<span id="cb3-110"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>((() <span class="kw">=&gt;</span> {</span>
+<span id="cb3-111"><a></a>  <span class="kw">const</span> n <span class="op">=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// number of facet columns</span></span>
+<span id="cb3-112"><a></a>  <span class="kw">const</span> keys <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(d3<span class="op">.</span><span class="fu">union</span>(industries<span class="op">.</span><span class="fu">map</span>((d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">industry</span>)))<span class="op">;</span></span>
+<span id="cb3-113"><a></a>  <span class="kw">const</span> index <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>(keys<span class="op">.</span><span class="fu">map</span>((key<span class="op">,</span> i) <span class="kw">=&gt;</span> [key<span class="op">,</span> i]))<span class="op">;</span></span>
+<span id="cb3-114"><a></a>  <span class="kw">const</span> fx <span class="op">=</span> (key) <span class="kw">=&gt;</span> index<span class="op">.</span><span class="fu">get</span>(key) <span class="op">%</span> n<span class="op">;</span></span>
+<span id="cb3-115"><a></a>  <span class="kw">const</span> fy <span class="op">=</span> (key) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(index<span class="op">.</span><span class="fu">get</span>(key) <span class="op">/</span> n)<span class="op">;</span></span>
+<span id="cb3-116"><a></a>  <span class="cf">return</span> {</span>
+<span id="cb3-117"><a></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">600</span></span>
+<span id="cb3-118"><a></a>    <span class="op">,</span> <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span></span>
+<span id="cb3-119"><a></a>    <span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">'white'</span></span>
+<span id="cb3-120"><a></a>    <span class="op">,</span> <span class="dt">y</span><span class="op">:</span> {<span class="dt">insetTop</span><span class="op">:</span> <span class="dv">10</span>}<span class="op">,</span></span>
+<span id="cb3-121"><a></a>    <span class="dt">fx</span><span class="op">:</span> {<span class="dt">padding</span><span class="op">:</span> <span class="fl">0.03</span>}<span class="op">,</span></span>
+<span id="cb3-122"><a></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb3-123"><a></a>      Plot<span class="op">.</span><span class="fu">areaY</span>(industries<span class="op">,</span> Plot<span class="op">.</span><span class="fu">normalizeY</span>(<span class="st">"extent"</span><span class="op">,</span> {</span>
+<span id="cb3-124"><a></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span></span>
+<span id="cb3-125"><a></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"unemployed"</span><span class="op">,</span></span>
+<span id="cb3-126"><a></a>        <span class="dt">fx</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> <span class="fu">fx</span>(d<span class="op">.</span><span class="at">industry</span>)<span class="op">,</span></span>
+<span id="cb3-127"><a></a>        <span class="dt">fy</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> <span class="fu">fy</span>(d<span class="op">.</span><span class="at">industry</span>)</span>
+<span id="cb3-128"><a></a>        <span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'white'</span></span>
+<span id="cb3-129"><a></a>      }))<span class="op">,</span></span>
+<span id="cb3-130"><a></a>      Plot<span class="op">.</span><span class="fu">text</span>(keys<span class="op">,</span> {fx<span class="op">,</span> fy<span class="op">,</span> <span class="dt">frameAnchor</span><span class="op">:</span> <span class="st">"top-left"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">6</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">6</span>})<span class="op">,</span></span>
+<span id="cb3-131"><a></a>      Plot<span class="op">.</span><span class="fu">frame</span>()</span>
+<span id="cb3-132"><a></a>    ]</span>
+<span id="cb3-133"><a></a>  }<span class="op">;</span></span>
+<span id="cb3-134"><a></a>})())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -535,7 +616,7 @@ AI
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRhdGEgPSBGaWxlQXR0YWNobWVudChcInBlbmd1aW5zLmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KVxuXG52aWV3b2YgYmlsbF9sZW5ndGhfbWluID0gSW5wdXRzLnJhbmdlKFxuICBbMzIsIDUwXSwgXG4gIHt2YWx1ZTogMzUsIHN0ZXA6IDEsIGxhYmVsOiBcIkJpbGwgbGVuZ3RoIChtaW4pOlwifVxuKVxudmlld29mIGlzbGFuZHMgPSBJbnB1dHMuY2hlY2tib3goXG4gIFtcIlRvcmdlcnNlblwiLCBcIkJpc2NvZVwiLCBcIkRyZWFtXCJdLCBcbiAgeyB2YWx1ZTogW1wiVG9yZ2Vyc2VuXCIsIFwiQmlzY29lXCJdLCBcbiAgICBsYWJlbDogXCJJc2xhbmRzOlwiXG4gIH1cbilcbmZpbHRlcmVkID0gZGF0YS5maWx0ZXIoZnVuY3Rpb24ocGVuZ3Vpbikge1xuICByZXR1cm4gYmlsbF9sZW5ndGhfbWluIDwgcGVuZ3Vpbi5iaWxsX2xlbmd0aF9tbSAmJlxuICAgICAgICAgaXNsYW5kcy5pbmNsdWRlcyhwZW5ndWluLmlzbGFuZCk7XG59KVxuXG5QbG90LnJlY3RZKGZpbHRlcmVkLCBcbiAgUGxvdC5iaW5YKFxuICAgIHt5OiBcImNvdW50XCJ9LCBcbiAgICB7eDogXCJib2R5X21hc3NfZ1wiLCBmaWxsOiBcInNwZWNpZXNcIiwgdGhyZXNob2xkczogMjB9XG4gICkpXG4gIC5wbG90KHtcbiAgICBmYWNldDoge1xuICAgICAgZGF0YTogZmlsdGVyZWQsXG4gICAgICB4OiBcInNleFwiLFxuICAgICAgeTogXCJzcGVjaWVzXCIsXG4gICAgICBtYXJnaW5SaWdodDogNjBcbiAgICB9LFxuICAgIG1hcmtzOiBbXG4gICAgICBQbG90LmZyYW1lKCksXG4gICAgXVxuICB9XG4pXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYmlsbF9sZW5ndGhfbWluJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2lzbGFuZHMnKSJ9XX0=
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImdvZHMgPSBbXG4gIFwiQ2hhb3MvR2FpYS9Nb3VudGFpbnNcIixcbiAgXCJDaGFvcy9HYWlhL1BvbnR1c1wiLFxuICBcIkNoYW9zL0dhaWEvVXJhbnVzXCIsXG4gIFwiQ2hhb3MvRXJvc1wiLFxuICBcIkNoYW9zL0VyZWJ1c1wiLFxuICBcIkNoYW9zL1RhcnRhcnVzXCJcbl1cblxuUGxvdC5wbG90KHtcbiAgYXhpczogbnVsbCxcbiAgaGVpZ2h0OiAxMDAsXG4gIG1hcmdpbjogMTAsXG4gIG1hcmdpbkxlZnQ6IDQwLFxuICBtYXJnaW5SaWdodDogMTIwLFxuICBtYXJrczogW1xuICAgIFBsb3QudHJlZShnb2RzLCB7dGV4dFN0cm9rZTogXCJibGFja1wifSlcbiAgXVxufSlcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZGF0YSA9IEZpbGVBdHRhY2htZW50KFwicGVuZ3VpbnMuY3N2XCIpLmNzdih7IHR5cGVkOiB0cnVlIH0pXG5cbnZpZXdvZiBiaWxsX2xlbmd0aF9taW4gPSBJbnB1dHMucmFuZ2UoXG4gIFszMiwgNTBdLCBcbiAge3ZhbHVlOiAzNSwgc3RlcDogMSwgbGFiZWw6IFwiQmlsbCBsZW5ndGggKG1pbik6XCJ9XG4pXG52aWV3b2YgaXNsYW5kcyA9IElucHV0cy5jaGVja2JveChcbiAgW1wiVG9yZ2Vyc2VuXCIsIFwiQmlzY29lXCIsIFwiRHJlYW1cIl0sIFxuICB7IHZhbHVlOiBbXCJUb3JnZXJzZW5cIiwgXCJCaXNjb2VcIl0sIFxuICAgIGxhYmVsOiBcIklzbGFuZHM6XCJcbiAgfVxuKVxuZmlsdGVyZWQgPSBkYXRhLmZpbHRlcihmdW5jdGlvbihwZW5ndWluKSB7XG4gIHJldHVybiBiaWxsX2xlbmd0aF9taW4gPCBwZW5ndWluLmJpbGxfbGVuZ3RoX21tICYmXG4gICAgICAgICBpc2xhbmRzLmluY2x1ZGVzKHBlbmd1aW4uaXNsYW5kKTtcbn0pXG5cblBsb3QucmVjdFkoZmlsdGVyZWQsIFxuICBQbG90LmJpblgoXG4gICAge3k6IFwiY291bnRcIn0sIFxuICAgIHt4OiBcImJvZHlfbWFzc19nXCIsIGZpbGw6IFwic3BlY2llc1wiLCB0aHJlc2hvbGRzOiAyMH1cbiAgKSlcbiAgLnBsb3Qoe1xuICAgIGZhY2V0OiB7XG4gICAgICBkYXRhOiBmaWx0ZXJlZCxcbiAgICAgIHg6IFwic2V4XCIsXG4gICAgICB5OiBcInNwZWNpZXNcIixcbiAgICAgIG1hcmdpblJpZ2h0OiA2MFxuICAgIH0sXG4gICAgbWFya3M6IFtcbiAgICAgIFBsb3QuZnJhbWUoKSxcbiAgICBdXG4gIH1cbilcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5kMyA9IHJlcXVpcmUoXCJkM0A3XCIpXG5cblBsb3QucGxvdCgoKCkgPT4ge1xuICBjb25zdCBuID0gMzsgLy8gbnVtYmVyIG9mIGZhY2V0IGNvbHVtbnNcbiAgY29uc3Qga2V5cyA9IEFycmF5LmZyb20oZDMudW5pb24oaW5kdXN0cmllcy5tYXAoKGQpID0+IGQuaW5kdXN0cnkpKSk7XG4gIGNvbnN0IGluZGV4ID0gbmV3IE1hcChrZXlzLm1hcCgoa2V5LCBpKSA9PiBba2V5LCBpXSkpO1xuICBjb25zdCBmeCA9IChrZXkpID0+IGluZGV4LmdldChrZXkpICUgbjtcbiAgY29uc3QgZnkgPSAoa2V5KSA9PiBNYXRoLmZsb29yKGluZGV4LmdldChrZXkpIC8gbik7XG4gIHJldHVybiB7XG4gICAgaGVpZ2h0OiA2MDBcbiAgICAsIGF4aXM6IG51bGxcbiAgICAsIGNvbG9yOiAnd2hpdGUnXG4gICAgLCB5OiB7aW5zZXRUb3A6IDEwfSxcbiAgICBmeDoge3BhZGRpbmc6IDAuMDN9LFxuICAgIG1hcmtzOiBbXG4gICAgICBQbG90LmFyZWFZKGluZHVzdHJpZXMsIFBsb3Qubm9ybWFsaXplWShcImV4dGVudFwiLCB7XG4gICAgICAgIHg6IFwiZGF0ZVwiLFxuICAgICAgICB5OiBcInVuZW1wbG95ZWRcIixcbiAgICAgICAgZng6IChkKSA9PiBmeChkLmluZHVzdHJ5KSxcbiAgICAgICAgZnk6IChkKSA9PiBmeShkLmluZHVzdHJ5KVxuICAgICAgICAsIGZpbGw6ICd3aGl0ZSdcbiAgICAgIH0pKSxcbiAgICAgIFBsb3QudGV4dChrZXlzLCB7ZngsIGZ5LCBmcmFtZUFuY2hvcjogXCJ0b3AtbGVmdFwiLCBkeDogNiwgZHk6IDZ9KSxcbiAgICAgIFBsb3QuZnJhbWUoKVxuICAgIF1cbiAgfTtcbn0pKCkpXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYmlsbF9sZW5ndGhfbWluJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2lzbGFuZHMnKSJ9XX0=
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
